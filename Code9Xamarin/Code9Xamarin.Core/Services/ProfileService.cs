@@ -42,16 +42,9 @@ namespace Code9Xamarin.Core.Services
             return profile;
         }
 
-        //public async Task<bool> CreateProfile(CreateProfileDto profile)
-        //{
-        //    UriBuilder builder = new UriBuilder(_runtimeContext.BaseEndpoint)
-        //    {
-        //        Path = "api/profiles"
-        //    };
-
-        //    var message = await _requestService.PostAsync<CreateProfileDto, string>(builder.Uri, profile);
-
-        //    return await Task.FromResult(true);
-        //}
+        public Task<bool> CreateProfile(CreateProfileDto profile)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

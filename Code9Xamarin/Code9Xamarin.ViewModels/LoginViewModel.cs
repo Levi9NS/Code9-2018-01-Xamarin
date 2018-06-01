@@ -9,7 +9,7 @@ namespace Code9Xamarin.ViewModels
     public class LoginViewModel : ViewModelBase
     {
         public Command LoginCommand { get; }
-        //public Command RegisterCommand { get; }
+        public Command RegisterCommand { get; }
 
         private readonly IAuthenticationService _authenticationService;
         private readonly IProfileService _profileService;
@@ -27,7 +27,7 @@ namespace Code9Xamarin.ViewModels
             LoginCommand = new Command(async () => await Login(),
                 () => !IsBusy && !string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password));
 
-            //RegisterCommand = new Command(async () => await RegisterNewUser());
+            RegisterCommand = new Command(async () => await RegisterNewUser());
         }
 
         private bool _isBusy;
@@ -85,21 +85,9 @@ namespace Code9Xamarin.ViewModels
             }
         }
 
-        //private async Task RegisterNewUser()
-        //{
-        //    try
-        //    {
-        //        IsBusy = true;
-        //        await _navigationService.NavigateAsync<RegisterViewModel>();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
-        //    }
-        //    finally
-        //    {
-        //        IsBusy = false;
-        //    }
-        //}
+        private Task RegisterNewUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
